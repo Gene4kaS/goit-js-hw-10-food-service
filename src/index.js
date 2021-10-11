@@ -11,7 +11,10 @@ const refs = {
     menuList: document.querySelector('.js-menu'),
     buttonToggle: document.querySelector('.theme-switch__toggle'),
     body: document.body,
+    
 };
+
+// const localTheme = localStorage.getItem('Theme');
 
 (function () {
     const markup = createMenu(menu);
@@ -19,9 +22,6 @@ const refs = {
     refs.body.classList.add(localStorage.getItem('Theme') ?? Theme.LIGHT);
     refs.buttonToggle.checked = localStorage.getItem('Theme') === Theme.DARK;
 })()
-
-// const markup = createMenu(menu);
-//     refs.menuList.insertAdjacentHTML('beforeend', markup);
 
 refs.buttonToggle.addEventListener('click', onChangeTheme);
 function onChangeTheme(e) {
