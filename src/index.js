@@ -19,7 +19,7 @@ const refs = {
 (function () {
     const markup = createMenu(menu);
     refs.menuList.insertAdjacentHTML('beforeend', markup);
-    refs.body.classList.add(localStorage.getItem('Theme') ?? Theme.LIGHT);
+    refs.body.classList.add(localStorage.getItem('Theme') ? localStorage.getItem('Theme') : Theme.LIGHT);
     refs.buttonToggle.checked = localStorage.getItem('Theme') === Theme.DARK;
 })()
 
