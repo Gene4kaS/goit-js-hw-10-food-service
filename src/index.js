@@ -14,13 +14,13 @@ const refs = {
     
 };
 
-// const localTheme = localStorage.getItem('Theme');
+const localTheme = localStorage.getItem('Theme');
 
 (function () {
     const markup = createMenu(menu);
     refs.menuList.insertAdjacentHTML('beforeend', markup);
-    refs.body.classList.add(localStorage.getItem('Theme') ? localStorage.getItem('Theme') : Theme.LIGHT);
-    refs.buttonToggle.checked = localStorage.getItem('Theme') === Theme.DARK;
+    refs.body.classList.add(localTheme ? localTheme : Theme.LIGHT);
+    refs.buttonToggle.checked = localTheme === Theme.DARK;
 })()
 
 refs.buttonToggle.addEventListener('click', onChangeTheme);
